@@ -59,16 +59,16 @@ public class WebScraper {
      * Takes the datetime attribute of a job post and returns whether that date occurs within 7 days of the provided
      * date.
      *
-     * @param datestamp a string containing the value from the datetime attribute from an HTML time element
+     * @param postDate a string containing the value from the datetime attribute from an HTML time element
      * @param currentMonth an int representing the month of the comparison date
      * @param currentDate an int representing the day of the comparison date
      * @return boolean
      */
-    public static boolean wasPostedWithinThreshold(String datestamp, int currentMonth, int currentDate) {
-        if (datestamp.length() > 0) {
+    public static boolean wasPostedWithinThreshold(String postDate, int currentMonth, int currentDate) {
+        if (postDate.length() > 0) {
             int prevMonth = currentMonth - 1;
-            int postMonth = Integer.parseInt(datestamp.substring(5, 7));
-            int postDay = Integer.parseInt(datestamp.substring(8, 10));
+            int postMonth = Integer.parseInt(postDate.substring(5, 7));
+            int postDay = Integer.parseInt(postDate.substring(8, 10));
 
             if (postMonth == currentMonth && postDay >= currentDate - 7) {
                 return true;
@@ -98,17 +98,17 @@ public class WebScraper {
     /**
      * Takes the datetime attribute of a job post and returns whether that date occurs in the last 7 days.
      *
-     * @param datestamp a string containing the value from the datetime attribute from an HTML time element
+     * @param postDate a string containing the value from the datetime attribute from an HTML time element
      * @return boolean
      */
-    public static boolean wasPostedWithinThreshold(String datestamp) {
-        if (datestamp.length() > 0) {
+    public static boolean wasPostedWithinThreshold(String postDate) {
+        if (postDate.length() > 0) {
             ZoneId zonedId = ZoneId.of("America/New_York");
             LocalDate today = LocalDate.now(zonedId);
             int thisMonth = today.getMonthValue();
             int todaysDate = today.getDayOfMonth();
 
-            return wasPostedWithinThreshold(datestamp, thisMonth, todaysDate);
+            return wasPostedWithinThreshold(postDate, thisMonth, todaysDate);
         }
 
         return false;

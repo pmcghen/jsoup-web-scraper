@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc9ff4ae-2b18-4158-b8dc-e3eb17040dd5" name="Changes" comment="Add test case for looking to the previous month.">
+    <list default="true" id="bc9ff4ae-2b18-4158-b8dc-e3eb17040dd5" name="Changes" comment="Add Javadoc for overridden threshold check method.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WebScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WebScraper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WebScraperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WebScraperTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +62,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.WebScraperTest.wasPostedWithinThreshold">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="jsoup-web-scraper" />
@@ -78,10 +79,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WebScraperTest.wasPostedWithinThreshold" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jsoup-web-scraper" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="WebScraperTest" />
+      <option name="METHOD_NAME" value="wasPostedWithinThreshold" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.WebScraperTest.wasPostedWithinThreshold" />
         <item itemvalue="JUnit.WebScraperTest" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -101,11 +113,19 @@
       <option name="project" value="LOCAL" />
       <updated>1682428891440</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add Javadoc for overridden threshold check method.">
+      <created>1682429364946</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682429364946</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add test case for looking to the previous month." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add test case for looking to the previous month." />
+    <MESSAGE value="Add Javadoc for overridden threshold check method." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Javadoc for overridden threshold check method." />
   </component>
 </project>
