@@ -55,6 +55,15 @@ public class WebScraper {
         System.out.println(count + " jobs were posted on " + url + " in the last 7 days");
     }
 
+    /**
+     * Takes the datetime attribute of a job post and returns whether that date occurs within 7 days of the provided
+     * date.
+     *
+     * @param datestamp a string containing the value from the datetime attribute from an HTML time element
+     * @param currentMonth an int representing the month of the comparison date
+     * @param currentDate an int representing the day of the comparison date
+     * @return boolean
+     */
     public static boolean wasPostedWithinThreshold(String datestamp, int currentMonth, int currentDate) {
         if (datestamp.length() > 0) {
             int prevMonth = currentMonth - 1;
