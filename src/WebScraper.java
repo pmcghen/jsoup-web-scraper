@@ -10,9 +10,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class WebScraper {
-    public static final String PURPLE = "\u001B[35m";
-    public static final String RESET = "\u001B[0m";
-
     public static void scrape(String url) {
         Document doc = null;
 
@@ -24,32 +21,40 @@ public class WebScraper {
 
         assert doc != null;
 
-        ArrayList<String> jobUrls = new ArrayList<>();
-        ArrayList<String> dates = new ArrayList<>();
-        ArrayList<String> jobTitles = new ArrayList<>();
-        ArrayList<String> companyName = new ArrayList<>();
-
-        Elements jobs = doc.select(".feature");
+        ArrayList<Job> currentJobs = new ArrayList<>();
+        Elements allJobs = doc.select(".feature");
 
         for (Element job :
-                jobs) {
-            dates.add(job.getElementsByTag("time").attr("datetime"));
-            jobTitles.add(job.getElementsByClass("title").text());
-            jobUrls.add(url + job.getElementsByAttributeValueContaining("href", "remote-jobs").attr("href"));
-            companyName.add(job.selectFirst(".company").text());
+                allJobs) {
+            String postDate = job.getElementsByTag("time").attr("datetime");
+
+            if (wasPostedWithinThreshold(postDate)) {
+                Job currentJob = new Job();
+
+                currentJob.setJobTitle(job.getElementsByClass("title").text());
+                currentJob.setCompanyName(job.selectFirst(".company").text());
+                currentJob.setDatePosted(postDate.substring(5, 7) + "/" + postDate.substring(8, 10));
+                currentJob.setLink(url + job.getElementsByAttributeValueContaining("href", "remote-jobs").attr("href"));
+
+                currentJobs.add(currentJob);
+            }
         }
 
+        printResults(url, currentJobs);
+    }
+
+    /**
+     * Prints the jobs that were posted within a given timeframe to the console.
+     *
+     * @param url A string containing the url of the scraped website
+     * @param currentJobs An ArrayList of Job objects that fit the timeframe
+     */
+    public static void printResults(String url, ArrayList<Job> currentJobs) {
         int count = 0;
 
-        for (int i = 0; i < dates.size(); i++) {
-            if (wasPostedWithinThreshold(dates.get(i))) {
-                System.out.println("\uD83E\uDEAA" + PURPLE + " Title: " + RESET + jobTitles.get(i));
-                System.out.println("\uD83C\uDFEC" + PURPLE + " Company: " + RESET + companyName.get(i));
-                System.out.println("\uD83D\uDDD3\uFE0F" + PURPLE + " Date Posted: " + RESET + dates.get(i).substring(5, 7) + "/" + dates.get(i).substring(8, 10));
-                System.out.println("\uD83C\uDF10" + PURPLE + " Link: " + RESET + jobUrls.get(i));
-                System.out.println("----------");
-                count++;
-            }
+        for (Job currentJob : currentJobs) {
+            System.out.println(currentJob);
+            count++;
         }
 
         System.out.println(count + " jobs were posted on " + url + " in the last 7 days");
