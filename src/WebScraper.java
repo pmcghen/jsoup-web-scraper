@@ -49,7 +49,7 @@ public class WebScraper {
      * @param url A string containing the url of the scraped website
      * @param currentJobs An ArrayList of Job objects that fit the timeframe
      */
-    public static void printResults(String url, ArrayList<Job> currentJobs) {
+    private static void printResults(String url, ArrayList<Job> currentJobs) {
         int count = 0;
 
         for (Job currentJob : currentJobs) {

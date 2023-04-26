@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc9ff4ae-2b18-4158-b8dc-e3eb17040dd5" name="Changes" comment="Refactor variable names to be more clear. &#10;Add test case for checking against current date.">
-      <change afterPath="$PROJECT_DIR$/src/Job.java" afterDir="false" />
+    <list default="true" id="bc9ff4ae-2b18-4158-b8dc-e3eb17040dd5" name="Changes" comment="Add Job class to replace ArrayLists of job attributes. &#10;Move printing the jobs into its own method.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WebScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WebScraper.java" afterDir="false" />
     </list>
@@ -127,13 +126,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682430622889</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add Job class to replace ArrayLists of job attributes. &#10;Move printing the jobs into its own method.">
+      <created>1682524447849</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682524447849</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add test case for looking to the previous month." />
     <MESSAGE value="Add Javadoc for overridden threshold check method." />
     <MESSAGE value="Refactor variable names to be more clear. &#10;Add test case for checking against current date." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor variable names to be more clear. &#10;Add test case for checking against current date." />
+    <MESSAGE value="Add Job class to replace ArrayLists of job attributes. &#10;Move printing the jobs into its own method." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Job class to replace ArrayLists of job attributes. &#10;Move printing the jobs into its own method." />
   </component>
 </project>
